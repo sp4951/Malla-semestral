@@ -3,18 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malla Curricular</title>
+  <title>Malla Curricular Interactiva</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Malla Curricular</h1>
-  <div class="malla">
-    <div class="materia" onclick="mostrarInfo('Matemáticas')">Matemáticas</div>
-    <div class="materia" onclick="mostrarInfo('Historia')">Historia</div>
-    <div class="materia" onclick="mostrarInfo('Biología')">Biología</div>
-  </div>
+  <h1>Malla Curricular Interactiva</h1>
 
-  <div id="info" class="info"></div>
+  <div class="malla">
+
+    <!-- Primer Año -->
+    <h2>Primer Año</h2>
+    <h3>I Semestre</h3>
+    <div class="semestre">
+      <div class="ramo" id="teorias" data-dependencias="" data-desbloquea="gestion">Teorías y funciones de la administración</div>
+      <div class="ramo" id="comunicacion" data-dependencias="" data-desbloquea="gestion">Desarrollo de habilidades de la comunicación administrativa</div>
+      <div class="ramo" id="civil" data-dependencias="">Derecho civil y mercantil</div>
+      <div class="ramo" id="conta" data-dependencias="" data-desbloquea="contafin">Fundamentos de contabilidad</div>
+      <div class="ramo" id="mateapli" data-dependencias="">Matemáticas aplicadas a la administración</div>
+      <div class="ramo" id="tic" data-dependencias="">Tecnologías de la información y la comunicación</div>
+    </div>
+
+    <h3>II Semestre</h3>
+    <div class="semestre">
+      <div class="ramo bloqueado" id="gestion" data-dependencias="teorias,comunicacion">Gestión administrativa</div>
+      <div class="ramo" id="caphum" data-dependencias="" data-desbloquea="siscaphum">Administración del capital humano</div>
+      <div class="ramo" id="const" data-dependencias="">Derecho constitucional y administrativo</div>
+      <div class="ramo bloqueado" id="contafin" data-dependencias="conta" data-desbloquea="costos">Contabilidad financiera</div>
+      <div class="ramo" id="matfin" data-dependencias="">Matemáticas financieras</div>
+      <div class="ramo" id="lectura" data-dependencias="">Lectura y análisis de textos administrativos</div>
+    </div>
+
+    <!-- Segundo Año -->
+    <h2>Segundo Año</h2>
+    <h3>III Semestre</h3>
+    <div class="semestre">
+      <div class="ramo" id="admorg" data-dependencias="" data-desbloquea="modelos">Administración de organizaciones</div>
+      <div class="ramo" id="prest" data-dependencias="">Administración de prestaciones</div>
+      <div class="ramo" id="lab" data-dependencias="">Derecho laboral</div>
+      <div class="ramo bloqueado" id="costos" data-dependencias="contafin">Contabilidad de costos</div>
+      <div class="ramo" id="etica" data-dependencias="">Ética y valores</div>
+      <div class="ramo" id="estad" data-dependencias="" data-desbloquea="inferencia">Estadística descriptiva y probabilidad</div>
+    </div>
+
+    <h3>IV Semestre</h3>
+    <div class="semestre">
+      <div class="ramo bloqueado" id="modelos" data-dependencias="admorg">Modelos organizacionales</div>
+      <div class="ramo bloqueado" id="siscaphum" data-dependencias="caphum">Sistemas de evaluación de capital humano</div>
+      <div class="ramo" id="finanzas" data-dependencias="" data-desbloquea="evalinv">Introducción a las finanzas y proyectos de inversión</div>
+      <div class="ramo" id="metodo" data-dependencias="">Metodología de la investigación</div>
+      <div class="ramo bloqueado" id="inferencia" data-dependencias="estad">Inferencia estadística</div>
+      <div class="ramo" id="sisinfo" data-dependencias="">Sistema de información automatizados en las organizaciones</div>
+    </div>
+
+    <!-- Tercer Año -->
+    <h2>Tercer Año</h2>
+    <h3>V Semestre</h3>
+    <div class="semestre">
+      <div class="ramo" id="calidad" data-dependencias="">Teoría de la calidad</div>
+      <div class="ramo" id="estrategica" data-dependencias="">Administración estratégica</div>
+      <div class="ramo" id="penal" data-dependencias="">Derecho penal y fiscal</div>
+      <div class="ramo bloqueado" id="evalinv" data-dependencias="finanzas">Administración de evaluación de inversiones</div>
+      <div class="ramo" id="micro" data-dependencias="">Microeconomía</div>
+      <div class="ramo" id="investop" data-dependencias="">Investigación de operaciones</div>
+    </div>
+
+    <h3>VI Semestre</h3>
+    <div class="semestre">
+      <div class="ramo" id="siscali" data-dependencias="">Sistemas de aseguramiento de la calidad</div>
+      <div class="ramo" id="prod" data-dependencias="" data-desbloquea="operaciones">Administración de la producción</div>
+      <div class="ramo" id="auditoria" data-dependencias="">Auditoría administrativa</div>
+      <div class="ramo" id="mercado" data-dependencias="">Fundamentos de mercadotecnia</div>
+      <div class="ramo" id="macro" data-dependencias="">Macroeconomía</div>
+      <div class="ramo" id="sustentable" data-dependencias="">Desarrollo sustentable</div>
+    </div>
+
+    <!-- Cuarto Año -->
+    <h2>Cuarto Año</h2>
+    <h3>VII Semestre</h3>
+    <div class="semestre">
+      <div class="ramo" id="emprende" data-dependencias="">Desarrollo de emprendedores</div>
+      <div class="ramo bloqueado" id="operaciones" data-dependencias="prod">Administración de operaciones</div>
+      <div class="ramo" id="logistica" data-dependencias="">Logística</div>
+      <div class="ramo" id="mercados" data-dependencias="">Investigación de mercados</div>
+      <div class="ramo" id="mexico" data-dependencias="">Análisis socioeconómico de México</div>
+      <div class="ramo" id="optativa" data-dependencias="">Optativa</div>
+    </div>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
