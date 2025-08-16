@@ -1,61 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0fdf4;
-  margin: 20px;
-  color: #1f2937;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0fff4;
+    text-align: center;
+    padding: 20px;
+    color: #2f4f2f;
 }
 
 h1 {
-  text-align: center;
-  color: #14532d;
-  margin-bottom: 20px;
-}
-
-h2 {
-  margin-top: 30px;
-  color: #166534;
-}
-
-h3 {
-  margin-top: 15px;
-  color: #15803d;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
 }
 
 .malla {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.semestre {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
-  margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .ramo {
-  padding: 15px;
-  background: #bbf7d0;
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.3s;
-  font-weight: 500;
-  border: 2px solid transparent;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background-color: #ccefc4; /* verde pastel inicial bloqueado */
+    color: #5a5a5a;
+    text-align: center;
 }
 
-.ramo:hover {
-  background: #86efac;
+.ramo.desbloqueado {
+    background-color: #b2f2b2;
+    color: #1d3d1d;
 }
 
 .ramo.aprobado {
-  background: #22c55e;
-  color: white;
-  border-color: #15803d;
+    background-color: #6ed36e;
+    color: white;
+    text-decoration: line-through;
 }
 
-.ramo.bloqueado {
-  background: #d1d5db;
-  color: #6b7280;
-  cursor: not-allowed;
+.ramo:hover {
+    transform: scale(1.05);
 }
