@@ -2,87 +2,85 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Malla Interactiva - Administración</title>
+  <title>Malla Curricular - Administración</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Malla Curricular - Administración</h1>
-  <div class="grid">
-
+  <div class="malla">
     <!-- Primer año -->
-    <div class="semester">
+    <div class="semestre">
       <h2>I Semestre</h2>
-      <div class="course" data-id="teorias" data-unlocks="gestion">Teorías y funciones de la administración</div>
-      <div class="course" data-id="comunicacion" data-unlocks="gestion">Desarrollo de habilidades de la comunicación administrativa</div>
-      <div class="course" data-id="civil">Derecho civil y mercantil</div>
-      <div class="course" data-id="conta1" data-unlocks="conta2">Fundamentos de contabilidad</div>
-      <div class="course" data-id="mates1">Matemáticas aplicadas a la administración</div>
-      <div class="course" data-id="tic">Tecnologías de la información y la comunicación</div>
+      <div class="ramo" id="tfa">Teorías y funciones de la administración</div>
+      <div class="ramo" id="dhca">Desarrollo de habilidades de la comunicación administrativa</div>
+      <div class="ramo" id="dcm">Derecho civil y mercantil</div>
+      <div class="ramo" id="fc">Fundamentos de contabilidad</div>
+      <div class="ramo" id="maa">Matemáticas aplicadas a la administración</div>
+      <div class="ramo" id="tic">Tecnologías de la información y la comunicación</div>
     </div>
 
-    <div class="semester">
+    <div class="semestre">
       <h2>II Semestre</h2>
-      <div class="course locked" data-id="gestion">Gestión administrativa</div>
-      <div class="course" data-id="capHumano" data-unlocks="evalHumano">Administración del capital humano</div>
-      <div class="course" data-id="constitucional">Derecho constitucional y administrativo</div>
-      <div class="course locked" data-id="conta2" data-unlocks="costos">Contabilidad financiera</div>
-      <div class="course" data-id="matesFin">Matemáticas financieras</div>
-      <div class="course" data-id="lectura">Lectura y análisis de textos administrativos</div>
+      <div class="ramo locked" id="ga" data-prereq="tfa,dhca">Gestión administrativa</div>
+      <div class="ramo" id="ach">Administración del capital humano</div>
+      <div class="ramo" id="dca">Derecho constitucional y administrativo</div>
+      <div class="ramo locked" id="cf" data-prereq="fc">Contabilidad financiera</div>
+      <div class="ramo" id="mf">Matemáticas financieras</div>
+      <div class="ramo" id="lat">Lectura y análisis de textos administrativos</div>
     </div>
 
     <!-- Segundo año -->
-    <div class="semester">
+    <div class="semestre">
       <h2>III Semestre</h2>
-      <div class="course" data-id="org" data-unlocks="modelos">Administración de organizaciones</div>
-      <div class="course" data-id="prestaciones">Administración de prestaciones</div>
-      <div class="course" data-id="laboral">Derecho laboral</div>
-      <div class="course locked" data-id="costos">Contabilidad de costos</div>
-      <div class="course" data-id="etica">Ética y valores</div>
-      <div class="course" data-id="estadistica1" data-unlocks="estadistica2">Estadística descriptiva y probabilidad</div>
+      <div class="ramo" id="ao">Administración de organizaciones</div>
+      <div class="ramo" id="ap">Administración de prestaciones</div>
+      <div class="ramo" id="dl">Derecho laboral</div>
+      <div class="ramo locked" id="cc" data-prereq="cf">Contabilidad de costos</div>
+      <div class="ramo" id="eyv">Ética y valores</div>
+      <div class="ramo" id="edp">Estadística descriptiva y probabilidad</div>
     </div>
 
-    <div class="semester">
+    <div class="semestre">
       <h2>IV Semestre</h2>
-      <div class="course locked" data-id="modelos">Modelos organizacionales</div>
-      <div class="course locked" data-id="evalHumano">Sistemas de evaluación de capital humano</div>
-      <div class="course" data-id="finanzas1" data-unlocks="inv">Introducción a las finanzas y proyectos de inversión</div>
-      <div class="course" data-id="investigacion">Metodología de la investigación</div>
-      <div class="course locked" data-id="estadistica2">Inferencia estadística</div>
-      <div class="course" data-id="sistemas">Sistemas de información automatizados en las organizaciones</div>
+      <div class="ramo locked" id="mo" data-prereq="ao">Modelos organizacionales</div>
+      <div class="ramo locked" id="sech" data-prereq="ach">Sistemas de evaluación de capital humano</div>
+      <div class="ramo" id="ifpi">Introducción a las finanzas y proyectos de inversión</div>
+      <div class="ramo" id="mi">Metodología de la investigación</div>
+      <div class="ramo locked" id="ie" data-prereq="edp">Inferencia estadística</div>
+      <div class="ramo" id="siao">Sistema de información automatizados en las organizaciones</div>
     </div>
 
     <!-- Tercer año -->
-    <div class="semester">
+    <div class="semestre">
       <h2>V Semestre</h2>
-      <div class="course" data-id="calidad">Teoría de la calidad</div>
-      <div class="course" data-id="estrategica">Administración estratégica</div>
-      <div class="course" data-id="penal">Derecho penal y fiscal</div>
-      <div class="course locked" data-id="inv">Administración de evaluación de inversiones</div>
-      <div class="course" data-id="micro">Microeconomía</div>
-      <div class="course" data-id="ope">Investigación de operaciones</div>
+      <div class="ramo" id="tc">Teoría de la calidad</div>
+      <div class="ramo" id="ae">Administración estratégica</div>
+      <div class="ramo" id="dpf">Derecho penal y fiscal</div>
+      <div class="ramo locked" id="aei" data-prereq="ifpi">Administración de evaluación de inversiones</div>
+      <div class="ramo" id="micro">Microeconomía</div>
+      <div class="ramo" id="io">Investigación de operaciones</div>
     </div>
 
-    <div class="semester">
+    <div class="semestre">
       <h2>VI Semestre</h2>
-      <div class="course" data-id="calidadSis">Sistemas de aseguramiento de la calidad</div>
-      <div class="course" data-id="produccion" data-unlocks="opeAdm">Administración de la producción</div>
-      <div class="course" data-id="auditoria">Auditoría administrativa</div>
-      <div class="course" data-id="mercadotecnia">Fundamentos de mercadotecnia</div>
-      <div class="course" data-id="macro">Macroeconomía</div>
-      <div class="course" data-id="sustentable">Desarrollo sustentable</div>
+      <div class="ramo" id="sac">Sistemas de aseguramiento de la calidad</div>
+      <div class="ramo" id="aprod" data-prereq="aei">Administración de la producción</div>
+      <div class="ramo" id="aud">Auditoría administrativa</div>
+      <div class="ramo" id="fm">Fundamentos de mercadotecnia</div>
+      <div class="ramo" id="macro">Macroeconomía</div>
+      <div class="ramo" id="ds">Desarrollo sustentable</div>
     </div>
 
     <!-- Cuarto año -->
-    <div class="semester">
+    <div class="semestre">
       <h2>VII Semestre</h2>
-      <div class="course" data-id="emprendedores">Desarrollo de emprendedores</div>
-      <div class="course locked" data-id="opeAdm">Administración de operaciones</div>
-      <div class="course" data-id="logistica">Logística</div>
-      <div class="course" data-id="mercados">Investigación de mercados</div>
-      <div class="course" data-id="analisisMex">Análisis socioeconómico de México</div>
-      <div class="course">Optativa</div>
+      <div class="ramo" id="de">Desarrollo de emprendedores</div>
+      <div class="ramo locked" id="aope" data-prereq="aprod">Administración de operaciones</div>
+      <div class="ramo" id="log">Logística</div>
+      <div class="ramo" id="im">Investigación de mercados</div>
+      <div class="ramo" id="asm">Análisis socioeconómico de México</div>
+      <div class="ramo" id="opt">Optativa</div>
     </div>
-
   </div>
   <script src="script.js"></script>
 </body>
