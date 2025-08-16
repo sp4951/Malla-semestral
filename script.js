@@ -1,13 +1,19 @@
-document.querySelectorAll(".course").forEach(course => {
-  course.addEventListener("click", () => {
-    if (course.classList.contains("locked") || course.classList.contains("completed")) return;
+document.querySelectorAll('.ramo').forEach(ramo => {
+  ramo.addEventListener('click', () => {
+    if (ramo.classList.contains('locked') || ramo.classList.contains('aprobado')) return;
 
-    course.classList.add("completed");
+    ramo.classList.add('aprobado');
 
-    const unlocks = course.dataset.unlocks;
-    if (unlocks) {
-      const next = document.querySelector(`[data-id='${unlocks}']`);
-      if (next) next.classList.remove("locked");
-    }
+    // Buscar dependientes
+    document.querySelectorAll('.ramo.locked').forEach(dep => {
+      const prereq = dep.getAttribute('data-prereq');
+      if (prereq) {
+        const requisitos = prereq.split(',');
+        const completos = requisitos.every(id => 
+          document.getElementById(id).classList.contains('aprobado')
+        );
+        if (completos) dep.classList.remove('locked');
+      }
+    });
   });
 });
