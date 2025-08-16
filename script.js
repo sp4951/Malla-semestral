@@ -1,19 +1,28 @@
-function mostrarInfo(materia) {
-  const info = document.getElementById("info");
-  let texto = "";
+document.querySelectorAll(".ramo").forEach(ramo => {
+  ramo.addEventListener("click", () => {
+    if (ramo.classList.contains("bloqueado")) {
+      alert("Este ramo está bloqueado. Debes aprobar sus requisitos primero.");
+      return;
+    }
 
-  switch(materia) {
-    case "Matemáticas":
-      texto = "Materia de cálculo, álgebra y geometría.";
-      break;
-    case "Historia":
-      texto = "Materia de historia universal y nacional.";
-      break;
-    case "Biología":
-      texto = "Materia de genética, ecología y anatomía.";
-      break;
-  }
+    // Marcar como aprobado
+    ramo.classList.add("aprobado");
 
-  info.innerHTML = `<h2>${materia}</h2><p>${texto}</p>`;
-  info.style.display = "block";
-}
+    // Desbloquear dependencias si corresponde
+    const desbloquea = ramo.dataset.desbloquea;
+    if (desbloquea) {
+      const ids = desbloquea.split(",");
+      ids.forEach(id => {
+        const target = document.getElementById(id.trim());
+        if (target) {
+          const requisitos = target.dataset.dependencias.split(",").map(r => r.trim()).filter(r => r !== "");
+          // Verifica que TODOS los requisitos estén aprobados
+          const cumplidos = requisitos.every(req => document.getElementById(req).classList.contains("aprobado"));
+          if (cumplidos) {
+            target.classList.remove("bloqueado");
+          }
+        }
+      });
+    }
+  });
+});
